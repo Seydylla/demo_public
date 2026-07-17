@@ -2,16 +2,11 @@
 
 require "functions.php";
 // require 'router.php';
+require 'Database.php';
 
-// Creating new pdo class and connect database
-$dsn = "mysql:host=localhost;port=3306;dbname=mydemo;user=root;charset=utf8mb4";
-$pdo = new PDO($dsn);
+$config = require 'config.php';
 
-$statement = $pdo->prepare("select * from posts");
-$statement->execute();
+$db = new Database($config['database']);
+$posts = $db->query("select * from posts")->fetchAll(PDO::FETCH_ASSOC);
 
-$posts = $statement->fetchAll(PDO::FETCH_ASSOC);
-
-foreach ($posts as $post) {
-    echo "<li>" . $post['title'] . "</li>";
-}
+dd($posts);
