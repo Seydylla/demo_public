@@ -71,31 +71,31 @@
     }
 
     // Dynamic Render: Post Cards Grid list
-    const postGrid = document.getElementById('postGrid');
-    function renderPosts() {
-      const filteredPosts = activeCategory === "All" ? posts : posts.filter(p => p.category === activeCategory);
+    // const postGrid = document.getElementById('postGrid');
+    // function renderPosts() {
+    //   const filteredPosts = activeCategory === "All" ? posts : posts.filter(p => p.category === activeCategory);
       
-      postGrid.innerHTML = filteredPosts.map(post => `
-        <article class="post-card card-lift group overflow-hidden rounded-2xl border border-mint bg-white">
-          <div class="relative overflow-hidden">
-            <img src="${post.image}" alt="${post.title}" class="h-52 w-full object-cover transition duration-500 group-hover:scale-105" />
-            <span class="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-bold uppercase tracking-wide text-brand">${post.category}</span>
-          </div>
-          <div class="p-6">
-            <div class="flex items-center gap-2 text-xs text-slate">
-              <span>${post.date}</span><span class="h-1 w-1 rounded-full bg-line"></span><span>${post.read} read</span>
-            </div>
-            <h3 class="font-display mt-3 text-lg font-bold leading-snug text-ink transition group-hover:text-brand">${post.title}</h3>
-            <p class="mt-2 text-sm leading-relaxed text-ink/60">${post.excerpt}</p>
-            <div class="mt-6 flex items-center gap-3 border-t border-fog pt-4">
-              <img src="${post.avatar}" alt="${post.author}" class="h-8 w-8 rounded-full object-cover" />
-              <span class="text-sm font-medium text-ink">${post.author}</span>
-              <a href="#" class="link-underline ml-auto text-sm font-semibold text-coral">Read →</a>
-            </div>
-          </div>
-        </article>
-      `).join('');
-    }
+    //   postGrid.innerHTML = filteredPosts.map(post => `
+    //     <article class="post-card card-lift group overflow-hidden rounded-2xl border border-mint bg-white">
+    //       <div class="relative overflow-hidden">
+    //         <img src="${post.image}" alt="${post.title}" class="h-52 w-full object-cover transition duration-500 group-hover:scale-105" />
+    //         <span class="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-bold uppercase tracking-wide text-brand">${post.category}</span>
+    //       </div>
+    //       <div class="p-6">
+    //         <div class="flex items-center gap-2 text-xs text-slate">
+    //           <span>${post.date}</span><span class="h-1 w-1 rounded-full bg-line"></span><span>${post.read} read</span>
+    //         </div>
+    //         <h3 class="font-display mt-3 text-lg font-bold leading-snug text-ink transition group-hover:text-brand">${post.title}</h3>
+    //         <p class="mt-2 text-sm leading-relaxed text-ink/60">${post.excerpt}</p>
+    //         <div class="mt-6 flex items-center gap-3 border-t border-fog pt-4">
+    //           <img src="${post.avatar}" alt="${post.author}" class="h-8 w-8 rounded-full object-cover" />
+    //           <span class="text-sm font-medium text-ink">${post.author}</span>
+    //           <a href="#" class="link-underline ml-auto text-sm font-semibold text-coral">Read →</a>
+    //         </div>
+    //       </div>
+    //     </article>
+    //   `).join('');
+    // }
 
     // Dynamic Render: Footer links and socials
     document.getElementById('socialsContainer').innerHTML = socials.map(s => `
