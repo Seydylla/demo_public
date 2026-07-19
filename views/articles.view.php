@@ -43,18 +43,22 @@
           $avatarNumber = ($article['writer_id'] == 2) ? 2 : 1;
           $avatarPath = "/images/avatar-" . $avatarNumber . ".jpg";
         ?>
-          <article class="post-card card-lift group overflow-hidden rounded-2xl border border-mint bg-white">
-            <div class="relative overflow-hidden">
-              <img src="<?= htmlspecialchars($imagePath) ?>" alt="<?= htmlspecialchars($article['title']) ?>" class="h-52 w-full object-cover transition duration-500 group-hover:scale-105" />
-              <span class="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-bold uppercase tracking-wide text-brand"><?= htmlspecialchars($article['catagory']) ?></span>
-            </div>
-            <div class="p-6">
-              <div class="flex items-center gap-2 text-xs text-slate">
-                <span><?= htmlspecialchars($article['date']) ?></span><span class="h-1 w-1 rounded-full bg-line"></span><span><?= htmlspecialchars($article['read_time']) ?> min read</span>
+          <article class="post-card card-lift group overflow-hidden rounded-2xl border border-mint bg-white flex flex-col justify-between h-full">
+            <div>
+              <div class="relative overflow-hidden">
+                <img src="<?= htmlspecialchars($imagePath) ?>" alt="<?= htmlspecialchars($article['title']) ?>" class="h-52 w-full object-cover transition duration-500 group-hover:scale-105" />
+                <span class="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-bold uppercase tracking-wide text-brand"><?= htmlspecialchars($article['catagory']) ?></span>
               </div>
-              <h3 class="font-display mt-3 text-lg font-bold leading-snug text-ink transition group-hover:text-brand"><?= htmlspecialchars($article['title']) ?></h3>
-              <p class="mt-2 text-sm leading-relaxed text-ink/60"><?= htmlspecialchars($article['header']) ?></p>
-              <div class="mt-6 flex items-center gap-3 border-t border-fog pt-4">
+              <div class="p-6">
+                <div class="flex items-center gap-2 text-xs text-slate">
+                  <span><?= htmlspecialchars($article['date']) ?></span><span class="h-1 w-1 rounded-full bg-line"></span><span><?= htmlspecialchars($article['read_time']) ?> min read</span>
+                </div>
+                <h3 class="font-display mt-3 text-lg font-bold leading-snug text-ink transition group-hover:text-brand"><?= htmlspecialchars($article['title']) ?></h3>
+                <p class="mt-2 text-sm leading-relaxed text-ink/60"><?= htmlspecialchars($article['header']) ?></p>
+              </div>
+            </div>
+            <div class="p-6 pt-0">
+              <div class="flex items-center gap-3 border-t border-fog pt-4">
                 <img src="<?= htmlspecialchars($avatarPath) ?>" alt="<?= htmlspecialchars($article['writer_name'] ?? 'Author') ?>" class="h-8 w-8 rounded-full object-cover" />
                 <span class="text-sm font-medium text-ink"><?= htmlspecialchars($article['writer_name'] ?? 'Author') ?></span>
                 <a href="#" class="link-underline ml-auto text-sm font-semibold text-coral">Read →</a>
