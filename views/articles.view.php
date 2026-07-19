@@ -36,14 +36,14 @@
       <div id="postGrid" class="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
         <?php 
 
-        foreach($articles as $article): 
+        foreach($articles as $article):
           $imagePath = "/images/post-" . $article['img'] . ".jpg";
 
           // Determine the avatar image file name based on writer_id
           $avatarNumber = ($article['writer_id'] == 2) ? 2 : 1;
           $avatarPath = "/images/avatar-" . $avatarNumber . ".jpg";
         ?>
-          <article class="post-card card-lift group overflow-hidden rounded-2xl border border-mint bg-white flex flex-col justify-between h-full">
+          <article class="post-card card-lift group overflow-hidden rounded-2xl border border-mint bg-white flex flex-col justify-between h-full" data-category="<?= $article['catagory'] ?>">
             <div>
               <div class="relative overflow-hidden">
                 <img src="<?= htmlspecialchars($imagePath) ?>" alt="<?= htmlspecialchars($article['title']) ?>" class="h-52 w-full object-cover transition duration-500 group-hover:scale-105" />
