@@ -12,5 +12,7 @@ if (!$id) {
 }
 
 
-$article = $db->query('select * from articles where id = :id', ['id' => $_GET['id']])->fetch();
+$article = $db->query('select * from articles where id = :id', [
+    'id' => $_GET['id']
+])->find();
 require 'views/article.view.php';
