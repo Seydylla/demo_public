@@ -28,8 +28,18 @@
           <h2 class="font-display mt-2 text-3xl font-bold text-ink sm:text-4xl">Fresh from the blog</h2>
         </div>
 
-        <div id="categories" class="chip-scroll flex max-w-full gap-2 overflow-x-auto pb-1">
-          <!-- Categories rendering dynamically -->
+        <div class="flex flex-wrap items-center gap-4">
+          <div id="categories" class="chip-scroll flex max-w-full gap-2 overflow-x-auto pb-1">
+            <!-- Categories rendering dynamically -->
+          </div>
+
+          <!-- Added Create Button -->
+          <a href="/article/create" class="inline-flex items-center gap-2 rounded-xl bg-brand px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:opacity-90">
+            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+            </svg>
+            Create Post
+          </a>
         </div>
       </div>
 
