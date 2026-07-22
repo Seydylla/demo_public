@@ -10,9 +10,9 @@
   <script src="/views/js/tailwind.config.js"></script>
   <link rel="stylesheet" href="/views/style/custom.css">
 </head>
-<body class="bg-bg font-body text-ink min-h-screen p-10">
+<body class="bg-bg font-body text-ink min-h-screen p-5 sm:p-10 flex flex-col justify-center items-center">
 
-  <main class="max-w-2xl mx-auto bg-white p-8 rounded-2xl border border-mint shadow-sm">
+  <main class="w-full max-w-2xl bg-white p-8 rounded-2xl border border-mint shadow-sm my-auto">
     <h1 class="text-2xl font-bold mb-6">Create New Article</h1>
 
     <form action="/article/create" method="POST" class="space-y-4">
@@ -23,7 +23,14 @@
 
       <div>
         <label class="block text-sm font-medium mb-1">Category</label>
-        <input type="text" name="catagory" required class="w-full border rounded-lg p-2.5" placeholder="Travel, Tech, etc." />
+        <select name="catagory" required class="w-full border rounded-lg p-2.5 bg-white">
+          <option value="" disabled selected>Select a category</option>
+          <option value="Travel">Travel</option>
+          <option value="Technology">Technology</option>
+          <option value="Food">Food</option>
+          <option value="Lifestyle">Lifestyle</option>
+          <option value="Design">Design</option>
+        </select>
       </div>
 
       <div>
@@ -41,15 +48,23 @@
           <input type="number" name="read_time" value="5" required class="w-full border rounded-lg p-2.5" />
         </div>
         <div>
-          <label class="block text-sm font-medium mb-1">Writer ID</label>
-          <input type="number" name="writer_id" value="1" required class="w-full border rounded-lg p-2.5" />
+          <label class="block text-sm font-medium mb-1">Writer</label>
+          <select name="writer_id" required class="w-full border rounded-lg p-2.5 bg-white">
+            <option value="1">Author 1</option>
+            <option value="2">Author 2</option>
+          </select>
         </div>
       </div>
 
-      <!-- Visible Button with fallback styling -->
-      <button type="submit" class="w-full bg-teal-600 hover:bg-teal-700 text-white font-semibold py-3 rounded-full transition cursor-pointer">
-        Publish Article
-      </button>
+      <!-- Action Buttons -->
+      <div class="flex items-center gap-4 pt-2">
+        <a href="/articles" class="w-1/2 text-center bg-gray-100 hover:bg-gray-200 text-slate font-semibold py-3 rounded-full transition">
+          Cancel
+        </a>
+        <button type="submit" class="w-1/2 bg-brand hover:opacity-90 text-white font-semibold py-3 rounded-full transition cursor-pointer">
+          Publish Article
+        </button>
+      </div>
     </form>
   </main>
 
