@@ -18,13 +18,12 @@
     <form action="/article/create" method="POST" class="space-y-4">
       <div>
         <label class="block text-sm font-medium mb-1">Title</label>
-        <input type="text" name="title" required class="w-full border rounded-lg p-2.5" />
+        <input type="text" name="title" required class="w-full border border-gray-200 rounded-lg p-2.5 transition outline-none focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20" />
       </div>
 
       <div>
         <label class="block text-sm font-medium mb-1">Category</label>
-        <select name="catagory" required class="w-full border rounded-lg p-2.5 bg-white">
-          <option value="" disabled selected>Select a category</option>
+        <select name="catagory" required class="w-full border border-gray-200 rounded-lg p-2.5 bg-white transition outline-none focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20">
           <option value="Travel">Travel</option>
           <option value="Technology">Technology</option>
           <option value="Food">Food</option>
@@ -35,21 +34,24 @@
 
       <div>
         <label class="block text-sm font-medium mb-1">Header / Excerpt</label>
-        <textarea name="header" required class="w-full border rounded-lg p-2.5" rows="3"></textarea>
+        <textarea name="header" required class="w-full border border-gray-200 rounded-lg p-2.5 transition outline-none focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20" rows="3"></textarea>
       </div>
 
       <div class="grid grid-cols-3 gap-4">
         <div>
           <label class="block text-sm font-medium mb-1">Image Number</label>
-          <input type="number" name="img" value="1" required class="w-full border rounded-lg p-2.5" />
+          <input type="number" name="img" value="1" required 
+            class="w-full border border-gray-200 rounded-lg p-2.5 transition outline-none focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20" />
         </div>
         <div>
           <label class="block text-sm font-medium mb-1">Read Time (min)</label>
-          <input type="number" name="read_time" value="5" required class="w-full border rounded-lg p-2.5" />
+          <input type="number" name="read_time" value="5" required 
+            class="w-full border border-gray-200 rounded-lg p-2.5 transition outline-none focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20" />
         </div>
         <div>
           <label class="block text-sm font-medium mb-1">Writer</label>
-          <select name="writer_id" required class="w-full border rounded-lg p-2.5 bg-white">
+          <select name="writer_id" required 
+            class="w-full border border-gray-200 rounded-lg p-2.5 bg-white transition outline-none focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20">
             <option value="1">Author 1</option>
             <option value="2">Author 2</option>
           </select>
@@ -58,7 +60,7 @@
 
       <!-- Action Buttons -->
       <div class="flex items-center gap-4 pt-2">
-        <a href="/articles" class="w-1/2 text-center bg-gray-100 hover:bg-gray-200 text-slate font-semibold py-3 rounded-full transition">
+        <a href="/articles" class="w-1/2 text-center text-white bg-red-600 hover:bg-red-700 text-slate font-semibold py-3 rounded-full transition">
           Cancel
         </a>
         <button type="submit" class="w-1/2 bg-brand hover:opacity-90 text-white font-semibold py-3 rounded-full transition cursor-pointer">
