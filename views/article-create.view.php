@@ -2,15 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Create Article — LumenBlog</title>
+
+  <!-- Load Tailwind CSS, your Config, and Custom CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/views/js/tailwind.config.js"></script>
+  <link rel="stylesheet" href="/views/style/custom.css">
 </head>
 <body class="bg-bg font-body text-ink min-h-screen p-10">
 
-  <main class="max-w-2xl mx-auto bg-white p-8 rounded-2xl border border-mint">
+  <main class="max-w-2xl mx-auto bg-white p-8 rounded-2xl border border-mint shadow-sm">
     <h1 class="text-2xl font-bold mb-6">Create New Article</h1>
 
-    <form action="/article-create" method="POST" class="space-y-4">
+    <form action="/article/create" method="POST" class="space-y-4">
       <div>
         <label class="block text-sm font-medium mb-1">Title</label>
         <input type="text" name="title" required class="w-full border rounded-lg p-2.5" />
@@ -41,7 +46,8 @@
         </div>
       </div>
 
-      <button type="submit" class="w-full bg-brand text-white font-semibold py-3 rounded-full hover:bg-opacity-90">
+      <!-- Visible Button with fallback styling -->
+      <button type="submit" class="w-full bg-teal-600 hover:bg-teal-700 text-white font-semibold py-3 rounded-full transition cursor-pointer">
         Publish Article
       </button>
     </form>
