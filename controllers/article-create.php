@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $img = $_POST['img'];
     $read_time = $_POST['read_time'];
     $writer_id = $_POST['writer_id'];
-    $date = date('M d, Y'); // Generates current date e.g., "Jul 22, 2026"
+    $date = date('Y-m-d'); // Generates "2026-07-22"
 
     // Execute SQL insertion using prepared statements
     $db->query('
