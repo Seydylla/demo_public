@@ -36,6 +36,12 @@
         <textarea name="header" required class="w-full border border-gray-200 rounded-lg p-2.5 transition outline-none focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20" rows="3"></textarea>
       </div>
 
+      <!-- Main Article Content Area -->
+      <div>
+        <label class="block text-sm font-medium mb-1">Article Content</label>
+        <textarea name="article_description" required placeholder="Write your full article here..." class="w-full border border-gray-200 rounded-lg p-2.5 transition outline-none focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20" rows="10"></textarea>
+      </div>
+
       <div class="grid grid-cols-3 gap-4">
         <div>
           <label class="block text-sm font-medium mb-1">Article Image</label>

@@ -23,20 +23,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $header = $_POST['header'];
     $read_time = $_POST['read_time'];
     $writer_id = $_POST['writer_id'];
+    $article_description = $_POST['article_description']; // HTML form uses name="content"
     $date = date('Y-m-d'); // Getting auto time
 
-    // Execute SQL using the original 'img' column name
+    // Execute SQL using all 8 placeholders
     $db->query('
-        INSERT INTO articles (title, catagory, header, img, read_time, writer_id, date) 
-        VALUES (:title, :catagory, :header, :img, :read_time, :writer_id, :date)
+        INSERT INTO articles (title, catagory, header, img, article_description, read_time, writer_id, date) 
+        VALUES (:title, :catagory, :header, :img, :article_description, :read_time, :writer_id, :date)
     ', [
-        'title'     => $title,
-        'catagory'  => $catagory,
-        'header'    => $header,
-        'img'       => $fileName, // Insert file name into 'img' column
-        'read_time' => $read_time,
-        'writer_id' => $writer_id,
-        'date'      => $date
+        'title'               => $title,
+        'catagory'            => $catagory,
+        'header'              => $header,
+        'img'                 => $fileName,
+        'article_description' => $article_description,
+        'read_time'           => $read_time,
+        'writer_id'           => $writer_id,
+        'date'                => $date
     ]);
 
     // Redirect to the articles listing page after saving
