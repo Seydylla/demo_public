@@ -73,6 +73,10 @@
             <option value="2">Author 2</option>
           </select>
         </div>
+
+        <?php if (isset($errors['img'])) : ?>
+          <p class="mt-3 text-sm/6 text-red-600 dark:text-red-400"><?= $errors['img'] ?></p>
+        <?php endif; ?>
       </div>
 
       <!-- Action Buttons -->

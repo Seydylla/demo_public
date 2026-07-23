@@ -18,7 +18,6 @@
   <main>
     <!-- ================= SINGLE ARTICLE VIEW ================= -->
     <?php 
-      // Reuse your image and avatar path mapping rules from the collection view
       $imagePath = "/images/" . $article['img'];
       $avatarNumber = ($article['writer_id'] == 2) ? 2 : 1;
       $avatarPath = "/images/avatar-" . $avatarNumber . ".jpg";
@@ -62,8 +61,7 @@
 
       <!-- Article Body Content Area -->
       <div class="prose max-w-none mt-10 text-base leading-loose text-ink/80 space-y-6">
-        <!-- If your database adds a body/content column later, echo it here. 
-             For now, this renders the main header/excerpt statement as copy. -->
+
         <p><?= htmlspecialchars($article['header']) ?></p>
         <p><?= htmlspecialchars($article['article_description']) ?></p>
       </div>

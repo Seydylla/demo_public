@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LumenBlog — Stories Worth Reading</title>
 
-  <!-- Tailwind CSS via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="views/js/tailwind.config.js"></script>
   <link rel="stylesheet" href="views/style/custom.css">
@@ -32,7 +31,6 @@
             <!-- Categories rendering dynamically -->
           </div>
 
-          <!-- Added Create Button -->
           <a href="/article/create" class="inline-flex items-center gap-2 rounded-xl bg-brand px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:opacity-90">
             <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />

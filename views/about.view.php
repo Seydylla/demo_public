@@ -5,12 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LumenBlog — Stories Worth Reading</title>
 
-  <!-- Tailwind CSS via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="views/js/tailwind.config.js"></script>
   <link rel="stylesheet" href="views/style/custom.css">
 
-  <!-- Custom CSS Styles matching index.css -->
 </head>
 
 <body class="min-h-screen bg-bg font-body text-ink">

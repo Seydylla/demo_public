@@ -24,15 +24,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errors['article'] = 'The article wont be more than 1000';
     }
 
+    if (isset($_FILES['img']) && $_FILES['img']['error'] === UPLOAD_ERR_OK) {
+        $fileTmpPath = $_FILES['img']['tmp_name'];
+        $fileName = basename($_FILES['img']['name']);
+        $fileExtension = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
+
+        $allowedExtensions = ['jpg', 'jpeg', 'png', 'webp', 'gif'];
+
+        if (!in_array($fileExtension, $allowedExtensions)) {
+            $errors['img'] = 'Only JPG, JPEG, PNG, WEBP, and GIF files are allowed.';
+        } else {
+            $checkImage = getimagesize($fileTmpPath);
+            if ($checkImage === false) {
+                $errors['img'] = 'Uploaded file is not a valid image.';
+            }
+        }
+    } else {
+        $errors['img'] = 'Please upload an article image.';
+    }
+
     if(empty($errors)) {
 
     $targetDir = "images/";
 
-    // Get the uploaded file name
     $fileName = basename($_FILES['img']['name']); 
     $targetPath = $targetDir . $fileName;
 
-    // Optional: Move uploaded file to images/ directory
     if (isset($_FILES['img']['tmp_name']) && $_FILES['img']['tmp_name'] != '') {
         move_uploaded_file($_FILES['img']['tmp_name'], $targetPath);
     }
@@ -43,10 +60,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $header = $_POST['header'];
     $read_time = $_POST['read_time'];
     $writer_id = $_POST['writer_id'];
-    $article_description = $_POST['article_description']; // HTML form uses name="content"
+    $article_description = $_POST['article_description'];
     $date = date('Y-m-d'); // Getting auto time
 
-    // Execute SQL using all 8 placeholders
     $db->query('
         INSERT INTO articles (title, catagory, header, img, article_description, read_time, writer_id, date) 
         VALUES (:title, :catagory, :header, :img, :article_description, :read_time, :writer_id, :date)
@@ -61,7 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'date'                => $date
     ]);
 
-    // Redirect to the articles listing page after saving
+
     header('Location: /articles');
     exit();
     }
