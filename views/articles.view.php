@@ -10,7 +10,6 @@
   <script src="views/js/tailwind.config.js"></script>
   <link rel="stylesheet" href="views/style/custom.css">
 
-  <!-- Custom CSS Styles matching index.css -->
 </head>
 
 <body class="min-h-screen bg-bg font-body text-ink">

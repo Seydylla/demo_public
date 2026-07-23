@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Create Article — LumenBlog</title>
 
-  <!-- Load Tailwind CSS, your Config, and Custom CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="/views/js/tailwind.config.js"></script>
   <link rel="stylesheet" href="/views/style/custom.css">
