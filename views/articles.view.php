@@ -77,6 +77,20 @@
           </article>
         <?php endforeach; ?>
       </div>
+
+      <?php if(empty($articles)) : ?>
+        <main class="flex-1 flex items-center justify-center px-5">
+
+          <div class="text-center">
+
+          <h1 class="text-4xl font-bold font-display sm:text-5xl text-ink">Sorry, hasn't got any data</h1>
+
+          <p class="mt-3 text-ink/60">The page you are looking for doesn't have any articles</p>
+
+        </div>
+
+      </main>
+      <?php endif; ?>
     </section>
 
   </main>
