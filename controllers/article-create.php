@@ -1,10 +1,18 @@
 <?php
 
+require 'Vaildator.php';
+
 $config = require 'config.php';
 $db = new Database($config['database']);
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    $errors = [];
+
+
+
+    if(empty($errors)) {
 
     $targetDir = "images/";
 
@@ -44,6 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Redirect to the articles listing page after saving
     header('Location: /articles');
     exit();
+    }
 }
 
 require 'views/article-create.view.php';
