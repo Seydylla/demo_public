@@ -10,7 +10,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $errors = [];
 
+    $validator = new Validator();
 
+    if(! $validator->string($_POST['title'], 1, 20)) {
+        $errors['title'] = 'The title willl 20 be required';
+    }
+
+    if(! $validator->string($_POST['header'], 1, 100)) {
+        $errors['header'] = 'The header wont be more than 100';
+    }
+
+    if(! $validator->string($_POST['article_description'], 1, 1000)) {
+        $errors['article'] = 'The article wont be more than 1000';
+    }
 
     if(empty($errors)) {
 

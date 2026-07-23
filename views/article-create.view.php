@@ -20,6 +20,10 @@
         <input type="text" name="title" required class="w-full border border-gray-200 rounded-lg p-2.5 transition outline-none focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20" />
       </div>
 
+      <?php if (isset($errors['title'])) : ?>
+        <p class="mt-3 text-sm/6 text-red-600 dark:text-red-400"><?= $errors['title'] ?></p>
+      <?php endif; ?>
+
       <div>
         <label class="block text-sm font-medium mb-1">Category</label>
         <select name="catagory" required class="w-full border border-gray-200 rounded-lg p-2.5 bg-white transition outline-none focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20">
@@ -36,11 +40,19 @@
         <textarea name="header" required class="w-full border border-gray-200 rounded-lg p-2.5 transition outline-none focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20" rows="3"></textarea>
       </div>
 
+      <?php if (isset($errors['header'])) : ?>
+        <p class="mt-3 text-sm/6 text-red-600 dark:text-red-400"><?= $errors['header'] ?></p>
+      <?php endif; ?>
+
       <!-- Main Article Content Area -->
       <div>
         <label class="block text-sm font-medium mb-1">Article Content</label>
         <textarea name="article_description" required placeholder="Write your full article here..." class="w-full border border-gray-200 rounded-lg p-2.5 transition outline-none focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20" rows="10"></textarea>
       </div>
+
+      <?php if (isset($errors['article'])) : ?>
+        <p class="mt-3 text-sm/6 text-red-600 dark:text-red-400"><?= $errors['article'] ?></p>
+      <?php endif; ?>
 
       <div class="grid grid-cols-3 gap-4">
         <div>
