@@ -47,7 +47,7 @@
         <?php 
 
         foreach($articles as $article):
-          $imagePath = "/images/post-" . $article['img'] . ".jpg";
+          $imagePath = "/images/" . $article['img'];
 
           // Determine the avatar image file name based on writer_id
           $avatarNumber = ($article['writer_id'] == 2) ? 2 : 1;

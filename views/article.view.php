@@ -20,7 +20,7 @@
     <!-- ================= SINGLE ARTICLE VIEW ================= -->
     <?php 
       // Reuse your image and avatar path mapping rules from the collection view
-      $imagePath = "/images/post-" . $article['img'] . ".jpg";
+      $imagePath = "/images/" . $article['img'];
       $avatarNumber = ($article['writer_id'] == 2) ? 2 : 1;
       $avatarPath = "/images/avatar-" . $avatarNumber . ".jpg";
     ?>
